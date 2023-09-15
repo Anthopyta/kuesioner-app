@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kuesioner;
 use Illuminate\Http\Request;
 
 class KuesionerController extends Controller
@@ -11,7 +12,8 @@ class KuesionerController extends Controller
      */
     public function index()
     {
-        //
+        $kuesioner = Kuesioner::orderBy('created_at', 'DESC')->get();
+        return view('kuesioner.index', compact('kuesioner'));
     }
 
     /**
@@ -19,7 +21,7 @@ class KuesionerController extends Controller
      */
     public function create()
     {
-        //
+        return view('kuesioner.create');
     }
 
     /**
@@ -27,7 +29,9 @@ class KuesionerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Kuesioner::create($request->all());
+
+        return redirect()->route('kuesioner')->with('success', 'Product added successfully');
     }
 
     /**

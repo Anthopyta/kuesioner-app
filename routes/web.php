@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\KuesionerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,8 @@ Route::controller(AuthController::class)->group(function () {
 
     Route::get('login', 'login')->name('login');
     Route::post('login', 'loginAction')->name('login.action');
+
+    Route::get('logout', 'logout')->middleware('auth')->name('logout');
 });
 
 Route::middleware('auth')->group(function () {
@@ -31,15 +34,15 @@ Route::middleware('auth')->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    // Route::controller(ProductController::class)->prefix('products')->group(function () {
-    //     Route::get('', 'index')->name('products');
-    //     Route::get('create', 'create')->name('products.create');
-    //     Route::post('store', 'store')->name('products.store');
-    //     Route::get('show/{id}', 'show')->name('products.show');
-    //     Route::get('edit/{id}', 'edit')->name('products.edit');
-    //     Route::put('edit/{id}', 'update')->name('products.update');
-    //     Route::delete('destroy/{id}', 'destroy')->name('products.destroy');
-    // });
+    Route::controller(KuesionerController::class)->prefix('kuesioner')->group(function () {
+        Route::get('', 'index')->name('kuesioner');
+        Route::get('create', 'create')->name('kuesioner.create');
+        Route::post('store', 'store')->name('kuesioner.store');
+        // Route::get('show/{id}', 'show')->name('kuesioner.show');
+        // Route::get('edit/{id}', 'edit')->name('kuesioner.edit');
+        // Route::put('edit/{id}', 'update')->name('kuesioner.update');
+        // Route::delete('destroy/{id}', 'destroy')->name('kuesioner.destroy');
+    });
 
-    // Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
+    Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
 });
