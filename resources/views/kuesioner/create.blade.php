@@ -3,7 +3,8 @@
 @section('title', 'Create Product')
 
 @section('contents')
-<h1 class="mb-0">Add Kuesioner</h1>
+<h1 class="mb-0">Add Questionnaire</h1>
+
 <hr />
 <form action="{{ route('kuesioner.store') }}" method="POST" enctype="multipart/form-data">
   @csrf

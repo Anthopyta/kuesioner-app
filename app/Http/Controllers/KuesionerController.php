@@ -33,7 +33,7 @@ class KuesionerController extends Controller
     public function store(Request $request)
     {
         Kuesioner::create($request->all());
-        
+
         return redirect()->route('kuesioner')->with('success', 'Questionnaire added successfully');
     }
 
@@ -62,7 +62,11 @@ class KuesionerController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $kuesioner = Kuesioner::findOrFail($id);
+
+        $kuesioner->update($request->all());
+
+        return redirect()->route('kuesioner')->with('success', 'Questionnaire updated successfully');
     }
 
     /**
@@ -70,6 +74,10 @@ class KuesionerController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $kuesioner = Kuesioner::findOrFail($id);
+
+        $kuesioner->delete();
+
+        return redirect()->route('kuesioner')->with('success', 'Questionnaire deleted successfully');
     }
 }
