@@ -13,19 +13,12 @@
     </div>
   </div>
   <div class="row mb-3">
-
     <div class="col-sm-2">
-      <input type="text" name="opsi1" value="{{ old('opsi1', 'Sangat Baik') }}" class="form-control"><br>
-
-      <input type="text" name="opsi2" value="{{ old('opsi2', 'Baik') }}" class="form-control"><br>
-
-      <input type="text" name="opsi3" value="{{ old('opsi3', 'Kurang Baik') }}" class="form-control"><br>
-
-      <input type="text" name="opsi4" value="{{ old('opsi4', 'Buruk') }}" class="form-control"><br>
-
-
+      <input type="text" name="opsi1" value="{{ old('opsi1', 'Sangat Baik') }}" class="form-control mb-2">
+      <input type="text" name="opsi2" value="{{ old('opsi2', 'Baik') }}" class="form-control mb-2">
+      <input type="text" name="opsi3" value="{{ old('opsi3', 'Kurang Baik') }}" class="form-control mb-2">
+      <input type="text" name="opsi4" value="{{ old('opsi4', 'Buruk') }}" class="form-control mb-2">
     </div>
-
   </div>
 
   <div class="row">

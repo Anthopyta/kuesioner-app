@@ -42,7 +42,9 @@ class KuesionerController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $kuesioner = Kuesioner::findOrFail($id);
+
+        return view('kuesioner.show', compact('kuesioner'));
     }
 
     /**
@@ -50,7 +52,9 @@ class KuesionerController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $kuesioner = Kuesioner::findOrFail($id);
+
+        return view('kuesioner.edit', compact('kuesioner'));
     }
 
     /**

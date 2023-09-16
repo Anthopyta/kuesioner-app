@@ -38,8 +38,8 @@ Route::middleware('auth')->group(function () {
         Route::get('', 'index')->name('kuesioner');
         Route::get('create', 'create')->name('kuesioner.create');
         Route::post('store', 'store')->name('kuesioner.store');
-        // Route::get('show/{id}', 'show')->name('kuesioner.show');
-        // Route::get('edit/{id}', 'edit')->name('kuesioner.edit');
+        Route::get('show/{id}', 'show')->name('kuesioner.show');
+        Route::get('edit/{id}', 'edit')->name('kuesioner.edit');
         // Route::put('edit/{id}', 'update')->name('kuesioner.update');
         // Route::delete('destroy/{id}', 'destroy')->name('kuesioner.destroy');
     });
