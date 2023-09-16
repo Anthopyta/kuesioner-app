@@ -4,7 +4,7 @@
 
 @section('contents')
 <div class="d-flex align-items-center justify-content-between">
-  <h1 class="mb-0">List Product</h1>
+  <h1 class="mb-0">List Questionnaire</h1>
   <a href="{{ route('kuesioner.create') }}" class="btn btn-primary">Add Product</a>
 </div>
 <hr />
@@ -17,10 +17,11 @@
   <thead class="table-primary">
     <tr>
       <th>#</th>
-      <th>Title</th>
-      <th>Price</th>
-      <th>Product Code</th>
-      <th>Description</th>
+      <th>Question</th>
+      <th>Opsi 1</th>
+      <th>Opsi 2</th>
+      <th>Opsi 3</th>
+      <th>Opsi 4</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -29,15 +30,17 @@
     @foreach($kuesioner as $rs)
     <tr>
       <td class="align-middle">{{ $loop->iteration }}</td>
-      <td class="align-middle">{{ $rs->title }}</td>
-      <td class="align-middle">{{ $rs->price }}</td>
-      <td class="align-middle">{{ $rs->product_code }}</td>
-      <td class="align-middle">{{ $rs->description }}</td>
+      <td class="align-middle">{{ $rs->question }}</td>
+      <td class="align-middle">{{ $rs->opsi1 }}</td>
+      <td class="align-middle">{{ $rs->opsi2 }}</td>
+      <td class="align-middle">{{ $rs->opsi3 }}</td>
+      <td class="align-middle">{{ $rs->opsi4 }}</td>
+
       <td class="align-middle">
         <div class="btn-group" role="group" aria-label="Basic example">
-          <a href="{{ route('kuesioner.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
-          <a href="{{ route('kuesioner.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
-          <form action="{{ route('kuesioner.destroy', $rs->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
+          <a href="" type="button" class="btn btn-secondary">Detail</a>
+          <a href="" type="button" class="btn btn-warning">Edit</a>
+          <form action="" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
             @csrf
             @method('DELETE')
             <button class="btn btn-danger m-0">Delete</button>

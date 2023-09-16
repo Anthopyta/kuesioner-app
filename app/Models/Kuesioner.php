@@ -11,6 +11,9 @@ class Kuesioner extends Model
 
     protected $fillable = [
         'question',
-        'answer'
+        'opsi1',
+        'opsi2',
+        'opsi3',
+        'opsi4',
     ];
 }

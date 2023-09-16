@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Kuesioner;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
 class KuesionerController extends Controller
 {
@@ -30,8 +33,8 @@ class KuesionerController extends Controller
     public function store(Request $request)
     {
         Kuesioner::create($request->all());
-
-        return redirect()->route('kuesioner')->with('success', 'Product added successfully');
+        
+        return redirect()->route('kuesioner')->with('success', 'Questionnaire added successfully');
     }
 
     /**

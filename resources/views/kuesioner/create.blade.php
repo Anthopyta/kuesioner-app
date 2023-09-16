@@ -8,20 +8,24 @@
 <form action="{{ route('kuesioner.store') }}" method="POST" enctype="multipart/form-data">
   @csrf
   <div class="row mb-3">
-    <div class="col">
+    <div class="col-8">
       <input type="text" name="question" class="form-control" placeholder="Question">
-    </div>
-    <div class="col">
-      <input type="text" name="price" class="form-control" placeholder="Price">
     </div>
   </div>
   <div class="row mb-3">
-    <div class="col">
-      <input type="text" name="product_code" class="form-control" placeholder="Product Code">
+
+    <div class="col-sm-2">
+      <input type="text" name="opsi1" value="{{ old('opsi1', 'Sangat Baik') }}" class="form-control"><br>
+
+      <input type="text" name="opsi2" value="{{ old('opsi2', 'Baik') }}" class="form-control"><br>
+
+      <input type="text" name="opsi3" value="{{ old('opsi3', 'Kurang Baik') }}" class="form-control"><br>
+
+      <input type="text" name="opsi4" value="{{ old('opsi4', 'Buruk') }}" class="form-control"><br>
+
+
     </div>
-    <div class="col">
-      <textarea class="form-control" name="description" placeholder="Descriptoin"></textarea>
-    </div>
+
   </div>
 
   <div class="row">

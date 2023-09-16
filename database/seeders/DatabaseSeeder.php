@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\User;
+use App\Models\Kuesioner;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -24,6 +25,14 @@ class DatabaseSeeder extends Seeder
             'name' => 'mamat',
             'username' => 'admin',
             'password' => bcrypt('12345')
+        ]);
+
+        Kuesioner::create([
+            'question' => 'あなたは私のことはどうでうすか？',
+            'opsi1' => 'sangat baik',
+            'opsi2' => 'baik',
+            'opsi3' => 'kurang',
+            'opsi4' => 'buruk'
         ]);
     }
 }

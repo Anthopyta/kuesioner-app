@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('kuesioners', function (Blueprint $table) {
             $table->id();
             $table->string('question');
-            $table->enum('answer',['sangat baik', 'baik', 'cukup', 'buruk']);
+            $table->string('opsi1')->nullable();
+            $table->string('opsi2')->nullable();
+            $table->string('opsi3')->nullable();
+            $table->string('opsi4')->nullable();
             $table->timestamps();
         });
     }
